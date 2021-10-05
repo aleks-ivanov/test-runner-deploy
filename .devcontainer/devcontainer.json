@@ -1,0 +1,13 @@
+{
+	"name": "devcontainer",
+	"settings": {
+		"workbench.colorTheme": "Default Dark+",
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"postCreateCommand": "",
+	"build": {
+		"dockerfile": "Dockerfile"
+	}
+}
+
+// Built with ❤ by [Pipeline Foundation](https://pipeline.foundation)
