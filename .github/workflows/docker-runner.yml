@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.devcontainer/Dockerfile'
+      - 'pydeps/runner/Dockerfile'
   workflow_dispatch:
 
 jobs:
@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKER_RUNNER_NAME: pydeps-agent:ci-2.7-test
+      PROJECT_NAME: pydeps
     strategy:
       matrix:
         python-version: [ 2.7 ]
@@ -34,11 +36,11 @@ jobs:
           --build-arg IS_CI="${{ matrix.is-ci }}" \
           --no-cache \
           --progress=plain \
-          --tag $DOCKER_USERNAME/pydeps-agent:ci-2.7-test \
-          --file .devcontainer/Dockerfile .
+          --tag $DOCKER_USERNAME/$DOCKER_RUNNER_NAME \
+          --file $PROJECT_NAME/runner/Dockerfile .
 
       - name: Push image to Docker Hub
         run: |
-          docker push $DOCKER_USERNAME/pydeps-agent:ci-2.7-test
+          docker push $DOCKER_USERNAME/$DOCKER_RUNNER_NAME
 
 # Built with ❤ by [Pipeline Foundation](https://pipeline.foundation)
