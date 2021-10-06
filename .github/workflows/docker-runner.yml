@@ -35,7 +35,7 @@ jobs:
           --no-cache \
           --progress=plain \
           --tag $DOCKER_USERNAME/pydeps-agent:ci-2.7-test \
-          --file docker-images/agent/Dockerfile .
+          --file .devcontainer/Dockerfile .
 
       - name: Push image to Docker Hub
         run: |
