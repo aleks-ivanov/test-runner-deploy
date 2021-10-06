@@ -11,6 +11,14 @@ RUN useradd --shell /bin/bash --create-home cicd-runner; \
 	mkdir -p /home/runner/work/_temp/_github_home; \
 	mkdir -p /home/runner/work/_temp/_github_workflow; \
 	mkdir -p /opt/hostedtoolcache; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/work; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/runners/2.283.1/externals; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/work/_temp; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/work/_actions; \
+	setfacl -R -m u:cicd-runner:rwx /opt/hostedtoolcache; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/work/_temp/_github_home; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner/work/_temp/_github_workflow; \
+	setfacl -R -m u:cicd-runner:rwx /opt/hostedtoolcache; \
 	chown cicd-runner: /home/runner/work; \
 	chown cicd-runner: /home/runner/runners/2.283.1/externals; \
 	chown cicd-runner: /home/runner/work/_temp; \
