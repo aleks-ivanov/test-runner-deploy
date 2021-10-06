@@ -4,6 +4,9 @@ RUN useradd --shell /bin/bash --create-home runner; \
 	apt-get update -y; \
 	apt-get install -y acl; \
 	mkdir -p /github; \
-	setfacl -m u:runner:rwx /github
+	mkdir -p /github/home; \
+	mkdir -p /github/workspace; \
+	mkdir -p /github/workflow; \
+	setfacl -R -m u:runner:rwx /github
 	
 USER runner
