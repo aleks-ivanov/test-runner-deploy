@@ -8,6 +8,6 @@ RUN apt-get update -y; \
 	mkdir -p /github/home; \
 	mkdir -p /github/workspace; \
 	mkdir -p /github/workflow; \
-	setfacl -R -m u:runner:rwx /github
+	# setfacl -R -m u:runner:rwx /github
 	
 # USER runner
