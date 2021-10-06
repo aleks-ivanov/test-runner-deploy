@@ -11,7 +11,7 @@ RUN useradd --shell /bin/bash --create-home cicd-runner; \
 	mkdir -p /__w/pydeps/pydeps; \
 	mkdir -p /home/runner; \
 	setfacl -R -m u:cicd-runner:rwx /github; \
-	setfacl -R -m u:cicd-runner:rwx /__w; \
+	setfacl -R -m u:cicd-runner:rwx /__w/pydeps/pydeps; \
 	setfacl -R -m u:cicd-runner:rwx /usr/local/bin/docker; \
 	setfacl -R -m u:cicd-runner:rwx /home/runner
 	
