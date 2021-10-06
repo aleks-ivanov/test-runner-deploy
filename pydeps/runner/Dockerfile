@@ -55,7 +55,7 @@ RUN useradd --shell /bin/bash --create-home cicd-runner; \
 	chown cicd-runner: /__e; \
 	chown cicd-runner: /__w/_temp; \
 	chown cicd-runner: /__w/_actions; \
-	chown cicd-runner: /__t; \
+	chown cicd-runner: /__t
 
 	# mkdir -p /test_work_dir; \
 	# setfacl -R -m u:cicd-runner:rwx /test_work_dir
