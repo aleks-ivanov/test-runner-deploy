@@ -9,8 +9,10 @@ RUN useradd --shell /bin/bash --create-home cicd-runner; \
 	mkdir -p /github/workflow; \
 	mkdir -p /usr/local/bin/docker; \
 	mkdir -p /__w; \
+	mkdir -p /home/runner; \
 	setfacl -R -m u:cicd-runner:rwx /github; \
 	setfacl -R -m u:cicd-runner:rwx /__w; \
-	setfacl -R -m u:cicd-runner:rwx /usr/local/bin/docker
+	setfacl -R -m u:cicd-runner:rwx /usr/local/bin/docker; \
+	setfacl -R -m u:cicd-runner:rwx /home/runner
 	
 USER cicd-runner
