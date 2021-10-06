@@ -8,7 +8,7 @@ RUN useradd --shell /bin/bash --create-home cicd-runner; \
 	mkdir -p /github/workspace; \
 	mkdir -p /github/workflow; \
 	mkdir -p /usr/local/bin/docker; \
-	mkdir -p /__w; \
+	mkdir -p /__w/pydeps/pydeps; \
 	mkdir -p /home/runner; \
 	setfacl -R -m u:cicd-runner:rwx /github; \
 	setfacl -R -m u:cicd-runner:rwx /__w; \
