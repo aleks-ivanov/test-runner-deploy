@@ -1,6 +1,6 @@
 FROM 1aleks0ivanov1/pydeps-agent:ci-2.7
 
-RUN useradd --shell /bin/bash --create-home cicd-runner; \
+RUN useradd --shell /bin/bash --create-home cicd-runner
 	# apt-get update -y; \
 	# apt-get install -y acl; \
 	# mkdir -p /github; \
